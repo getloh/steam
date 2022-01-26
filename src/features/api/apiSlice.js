@@ -2,16 +2,23 @@ import {createSlice} from '@reduxjs/toolkit';
 
 // actions - basic functions which return type and payload
 
-export const setSteamid = (string) => {
+export const setSteamId = (string) => {
     return {
-        type: 'api/setSteamid',
+        type: 'api/setSteamId',
         payload: string
     }
 };
 
-export const setApidata = (json) => {
+export const setApiData = (json) => {
     return {
-        type: 'api/setApidata',
+        type: 'api/setApiData',
+        payload: json
+    }
+};
+
+export const setApiUserData = (json) => {
+    return {
+        type: 'api/setApiUserData',
         payload: json
     }
 };
@@ -33,10 +40,10 @@ export const setStatus = (status) => {
 // reducer - initialState
 
 const initialState = {
-    steamid: [],
-    usernum: 1,
-    apiuserdata: [],
-    apidata: [],
+    steamId: [],
+    userNum: 1,
+    apiUserData: [],
+    apiData: [],
     status: "initial",
     apikey: "",
 
@@ -48,11 +55,14 @@ const options = {
     name: "api",
     initialState: initialState,
     reducers: {
-        setSteamid: (state, action) => {
-            state.steamid.push(action.payload);
+        setSteamId: (state, action) => {
+            state.steamId.push(action.payload);
         }, 
-        setApidata: (state, action) => {
-            state.apidata.push(action.payload);
+        setApiData: (state, action) => {
+            state.apiData.push(action.payload);
+        },
+        setApiUserData: (state, action) => {
+            state.apiUserData.push(action.payload);
         },
         setApikey: (state, action) => {
             state.apikey = action.payload;
