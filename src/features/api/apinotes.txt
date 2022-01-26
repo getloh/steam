@@ -1,0 +1,9 @@
+https://developer.valvesoftware.com/wiki/Steam_Web_API
+
+https://partner.steamgames.com/doc/webapi_overview/auth
+https://partner.steamgames.com/doc/webapi_overview
+
+
+https://steamcommunity.com/dev/registerkey
+
+https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=10F3EDFA50D545E63CC86C0923E99716&steamid=76561197964454963&format=json&include_appinfo=true
