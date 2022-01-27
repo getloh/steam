@@ -10,7 +10,6 @@ import { setInput } from "../ui/uiSlice.js";
 // const query = store.getState().ui.input;
 
 export const Steam = {
-
     
     getUserData() {
         const query = store.getState().ui.input;
@@ -45,10 +44,9 @@ export const Steam = {
         }, networkError => {
             console.log(networkError.message);
         }).then(jsonResponse => {                       // Success
-            store.dispatch(setApiUserData(jsonResponse.response.players[0]));
             store.dispatch(setStatus("Returned-vanity"));
             console.log(jsonResponse);
-            if(jsonResponse.response.success === 1){
+            if(jsonResponse.response.success === 1){        // Changes the input state to the vanity's steamID, then calls getuserdata()
                 store.dispatch(setInput(jsonResponse.response.steamid));
                 this.getUserData();
             }
