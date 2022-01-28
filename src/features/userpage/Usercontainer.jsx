@@ -1,6 +1,8 @@
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import Userpage from './userpage';
+import Userpage from './Userpage';
+
+
 
 
 function Usercontainer() {
@@ -10,7 +12,7 @@ function Usercontainer() {
 
 
   return (
-    <div>
+    <div className="Usercontainer">
         
         {state.api.apiUserData.map (x => 
                     <Userpage 
@@ -22,6 +24,7 @@ function Usercontainer() {
                         age={x.timecreated}
                         country={x.countrycode}
                         status={x.personastate}
+                        url={x.profileurl}
                     /> ) }
 
     </div>

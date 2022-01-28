@@ -16,12 +16,20 @@ export const setMode = (string) => {
     }
 }
 
+export const setError = (string) => {
+    return {
+        type: 'ui/setError',
+        payload: string
+    }
+}
+
 
 // reducer - initialState
 
 const initialState = {
     input: "",
     mode: "",
+    error: ""
     
 }
 
@@ -35,8 +43,11 @@ const options = {
             state.input = action.payload;
         }, 
         setMode: (state, action) => {
-            state.mode = action.payload
+            state.mode = action.payload;
         },
+        setError: (state, action) => {
+            state.error = action.payload;
+        }
     }
 }
 

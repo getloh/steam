@@ -3,8 +3,8 @@ import {apikey} from "./apikey.js";
 // with an apikey from Steam
 
 import { store } from "../../app/store.js";
-import {setApidata, setStatus, setApiUserData} from './apiSlice.js'
-import { setInput } from "../ui/uiSlice.js";
+import {setApidata, setStatus, setApiUserData, setSteamId} from './apiSlice.jsx'
+import { setInput, setError} from "../ui/uiSlice.jsx";
 
 
 // const query = store.getState().ui.input;
@@ -23,10 +23,14 @@ export const Steam = {
             throw new Error('Request failed!');         // Error logging
         }, networkError => {
             console.log(networkError.message);
-        }).then(jsonResponse => {                       // Success
-            store.dispatch(setApiUserData(jsonResponse.response.players[0]));
-            store.dispatch(setStatus("Fetched-user"));
+        }).then(jsonResponse => {
+            if (jsonResponse.response.players.length !== 0){                    // Success
+            store.dispatch(setApiUserData(jsonResponse.response.players[0]));   // Add data to state
+            store.dispatch(setStatus("Fetched-user"));                          // Set status
+            store.dispatch(setSteamId(`${query}`));                             // Add steamID to state
             console.log(jsonResponse);
+        }
+        else {store.dispatch(setError("SteamID or VanityURL not recognized"))}
         });
 
     },
@@ -50,7 +54,7 @@ export const Steam = {
                 store.dispatch(setInput(jsonResponse.response.steamid));
                 this.getUserData();
             }
-            
+            else{store.dispatch(setError("SteamID or VanityURL not recognized"))}
         });
 
     }

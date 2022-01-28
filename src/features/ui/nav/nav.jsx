@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setInput, setMode } from '../uiSlice';
 
 const StyledButton = styled.button`
-    color: ${(props)=> props.backgroundColor};
-
+    color: ${(props)=> props.color};
+    background-color: ${(props)=> props.backgroundColor};
     &:hover{
       background-color: limegreen
 
@@ -21,9 +21,10 @@ export function Nav() {
 
     return (
       <div className="Nav">
-        <StyledButton backgroundColor="pink">This is a button</StyledButton>
-        <StyledButton>This is a button</StyledButton>
-        <StyledButton>This is a button</StyledButton>
+        <StyledButton color="green">Thas a button</StyledButton>
+        <StyledButton color="purple">Another Button</StyledButton>
+        <StyledButton color="blue">Ooh la la Button</StyledButton>
+        <div className="error">{state.error}</div>
       </div>
     );
   }

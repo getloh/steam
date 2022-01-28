@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
 
-import {Nav} from './features/ui/nav/nav.js'
+import {Nav} from './features/ui/nav/nav.jsx'
 import Input from './features/ui/input/input'
 import { Globalstyle } from './globalstyles';
-import Usercontainer from './features/userpage/usercontainer';
+import Usercontainer from './features/userpage/Usercontainer';
 
 function App() {
   return (
@@ -14,7 +14,11 @@ function App() {
         <Input/>
         <Nav/>
         
-        <Usercontainer/>
+        
+      </div>
+      <div className="userarea">
+      <Usercontainer className="Usercontainer"/>
+
       </div>
       
       <h1> title </h1>
