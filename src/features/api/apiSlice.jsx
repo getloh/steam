@@ -9,9 +9,9 @@ export const setSteamId = (string) => {
     }
 };
 
-export const setApiData = (json) => {
+export const setApiGameData = (json) => {
     return {
-        type: 'api/setApiData',
+        type: 'api/setApiGameData',
         payload: json
     }
 };
@@ -43,7 +43,7 @@ const initialState = {
     steamId: [],
     userNum: 1,
     apiUserData: [],
-    apiData: [],
+    apiGameData: [],
     status: "initial",
     apikey: "",
 
@@ -58,8 +58,8 @@ const options = {
         setSteamId: (state, action) => {
             state.steamId.push(action.payload);
         }, 
-        setApiData: (state, action) => {
-            state.apiData.push(action.payload);
+        setApiGameData: (state, action) => {
+            state.apiGameData.push(action.payload);
         },
         setApiUserData: (state, action) => {
             state.apiUserData.push(action.payload);

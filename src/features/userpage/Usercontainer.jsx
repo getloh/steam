@@ -1,5 +1,5 @@
 import React from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 import Userpage from './Userpage';
 
 
@@ -7,7 +7,7 @@ import Userpage from './Userpage';
 
 function Usercontainer() {
     const state = useSelector(state => state);              
-    const dispatch = useDispatch();
+
 
 
 

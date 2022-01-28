@@ -9,10 +9,19 @@ export const Globalstyle = createGlobalStyle`
     .header{
         display: flex;
         justify-content: space-around;
+        align-items: center;
+        background-color: rgb(30, 30, 30);
+        min-height: 8vh;
+        margin: 0px;
+        padding: 0px;
+    }
+    .header h1{
+        font-size: 2rem;
+        margin: 0px;
     }
 
     .userarea{
-        background-color: rgb(35, 35, 35);
+        background-color: rgb(43, 43, 43);
     }
     .Usercontainer{
         display: flex;

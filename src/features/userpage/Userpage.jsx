@@ -17,7 +17,12 @@ const StyledDiv = styled.div`
     line-height: 1rem;
     font-size: 0.7rem;
     padding: 2vh;
+    margin: 1vh 0vh;
+
+    background-color: rgb(28, 28, 28);
+    border-radius: 35px;
     & h2{
+      text-align: center;
       margin-top: 0rem;
       margin-bottom: 0.3rem;
       height: 1.6rem;
@@ -30,8 +35,8 @@ const StyledDiv = styled.div`
       width: 100%;
     }
     &:hover{
-      background-color: rgb(28, 28, 28);
-      border-radius: 35px;
+      background-color: rgb(0, 37, 54);
+      
     }
 
 `
