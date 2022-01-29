@@ -25,9 +25,9 @@ function App() {
       <Usercontainer className="Usercontainer"/>
 
       </div>
-      <container className="main">
+      <div className="main">
       {state.api.apiGameData ? <Gamelist/> : null}
-      </container>
+      </div>
       
       <footer>
 

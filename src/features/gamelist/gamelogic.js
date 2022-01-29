@@ -6,7 +6,7 @@ import { store } from "../../app/store.js";
 
 export const Gamelogic = {
     compareGames(objArr1, objArr2){
-        const matchedArray = objArr1.filter(obj1 => objArr2.some(obj2 => {return obj1.id === obj2.id}) );
+        const matchedArray = objArr1.filter(obj1 => objArr2.some(obj2 => {return obj1.appid === obj2.appid}) );
         return matchedArray;
 
     }
