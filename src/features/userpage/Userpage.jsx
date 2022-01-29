@@ -17,7 +17,7 @@ const StyledDiv = styled.div`
     line-height: 1rem;
     font-size: 0.7rem;
     padding: 2vh;
-    margin: 1vh 0vh;
+    margin: 1vh 0.5vh;
 
     background-color: rgb(28, 28, 28);
     border-radius: 35px;

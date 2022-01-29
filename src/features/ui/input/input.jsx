@@ -5,12 +5,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setInput, setMode } from '../uiSlice';
 import { Steam } from '../../api/steamapi';
-
-
-export const StyledInput = styled.input`
-  background-color: black;
-  color: white;
-`
+import { StyledInput, StyledSearch } from '../uiStyles';
 
 
 
@@ -42,7 +37,7 @@ function Input() {
 
   return <div>
     <StyledInput placeholder="search for a user" onKeyUp={handleKeypress} onChange={handleInput}></StyledInput>
-    <button onClick={handleFetch}>Search!</button>
+    <StyledSearch onClick={handleFetch}> <i class="fas fa-search"></i></StyledSearch>
   </div>;
 }
 

@@ -4,6 +4,7 @@ export const Globalstyle = createGlobalStyle`
     body{
         background-color: rgb(46, 46, 46);
         color: rgb(224, 224, 224);
+        
     }
 
     .header{
