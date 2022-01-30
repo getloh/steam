@@ -12,7 +12,7 @@ const StyledDiv = styled.div`
     
     height: 100%;
     width: 20vw;
-    max-width: 20vh;
+    max-width: 150px;
     text-align: left;
     line-height: 1rem;
     font-size: 0.7rem;

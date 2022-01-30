@@ -66,6 +66,7 @@ export const Steam = {
     getGameData(){
         let users = store.getState().api.steamId;   // Grab the steamIDs and store in 'users'
         let gameDataArray = store.getState().api.apiGameData;
+        store.dispatch(setStatus("Fetching-gamedata"))
 
         console.log("getgameData")
         for (let i = 0; i < users.length; i++){     // Iterate over users array           
@@ -84,12 +85,14 @@ export const Steam = {
                 }).then(jsonResponse => {                       // Success
                     console.log(jsonResponse);
                     jsonResponse.response.steamid = users[i];
-                    store.dispatch(setApiGameData(jsonResponse.response))
+                    store.dispatch(setApiGameData(jsonResponse.response));
+                    store.dispatch(setStatus("Fetched-gamedata"))
                 });
             }   // end of if statement
-            else {console.log(`game data for user ${users[i]} has already been loaded`)        }
+            else {console.log(`game data for user ${users[i]} has already been loaded`);
+            store.dispatch(setStatus("Fetched-gamedataalreadypresent"))        }
         }   // end of for loop
-
+        
 
         
 

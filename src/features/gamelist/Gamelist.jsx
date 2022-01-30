@@ -7,8 +7,6 @@ function Gamelist() {
     const state = useSelector(state => state); 
 
     let gamesArray = () => {
-
-
         if (state.api.apiGameData.length === 0){
             console.log("case 0");
             return []
@@ -25,7 +23,9 @@ function Gamelist() {
             console.log("case > 2");
             let sharedGamesArray = state.api.apiGameData[0].games;
             for (let i = 1; i < state.api.steamId.length; i++){
+                
                 console.log(`i = ${i} , array is  ${state.api.apiGameData[i].games}`);
+                
                 sharedGamesArray = Gamelogic.compareGames(sharedGamesArray, state.api.apiGameData[i].games );
             }
             return sharedGamesArray;
@@ -33,22 +33,25 @@ function Gamelist() {
         else {
             console.log("gamesArray function failed");
         }
-        
     }
+
+    const gamesArrayLoad = () => {
+        if (state.api.apiGameData.length === state.api.apiUserData.length){
+            return gamesArray()?.map(x=> <p>{x.name}</p>)
+            }
+        else if (state.api.status === "Fetching-gamedata"){
+            return <p>Loading...</p>
+            }
+        else {return ""}
+            
+    }
+    
 
   return (
   <div className='Gamelist'>
-
-    {/* {state.api.apiGameData[0].games.map(x => 
-        <p>{x.name}</p>
-    )
     
-    } */}
-    {gamesArray()?.map(x=> <p>{x.name}</p>)}
-    
-
-
-    
+    {gamesArrayLoad()}
+        
   </div>
   );
 }
