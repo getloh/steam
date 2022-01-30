@@ -1,9 +1,10 @@
 import React from 'react';
 
-function Gameitem() {
+function Gameitem(appid, name) {
   return (
   <div>
-    
+    <p>{appid}</p>
+    <p>{name}</p>
   </div>
   );
 }

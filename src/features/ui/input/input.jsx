@@ -36,7 +36,7 @@ function Input() {
 
 
   return <div>
-    <StyledInput placeholder="search for a user" onKeyUp={handleKeypress} onChange={handleInput}></StyledInput>
+    <StyledInput placeholder="Find user by vanity URL or SteamID" onKeyUp={handleKeypress} onChange={handleInput}></StyledInput>
     <StyledSearch onClick={handleFetch}> <i class="fas fa-search"></i></StyledSearch>
   </div>;
 }

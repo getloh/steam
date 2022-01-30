@@ -26,7 +26,6 @@ function Gamelist() {
             let sharedGamesArray = state.api.apiGameData[0].games;
             for (let i = 1; i < state.api.steamId.length; i++){
                 console.log(`i = ${i} , array is  ${state.api.apiGameData[i].games}`);
-                console.log("test")
                 sharedGamesArray = Gamelogic.compareGames(sharedGamesArray, state.api.apiGameData[i].games );
             }
             return sharedGamesArray;
@@ -49,7 +48,7 @@ function Gamelist() {
     
 
 
-    <Gameitem/>
+    
   </div>
   );
 }

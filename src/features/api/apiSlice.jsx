@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
+import { testState } from './testState';
 
 // actions - basic functions which return type and payload
 
@@ -53,7 +54,7 @@ const initialState = {
 
 const options = {
     name: "api",
-    initialState: initialState,
+    initialState: testState,
     reducers: {
         setSteamId: (state, action) => {
             state.steamId.push(action.payload);
