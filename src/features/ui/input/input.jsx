@@ -8,8 +8,6 @@ import { Steam } from '../../api/steamapi';
 import { StyledInput, StyledSearch } from '../uiStyles';
 
 
-
-
 function Input() {
     const dispatch = useDispatch();
     const state = useSelector(state => state);

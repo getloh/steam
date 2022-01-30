@@ -16,6 +16,7 @@ function Usercontainer() {
         
         {state.api.apiUserData.map (x => 
                     <Userpage 
+                        key={x.steamid}
                         steamid={x.steamid}
                         displayname={x.personaname}
                         avatar={x.avatarfull}

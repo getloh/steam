@@ -6,7 +6,7 @@ import { Gamelogic } from './gamelogic';
 function Gamelist() {
     const state = useSelector(state => state); 
 
-    let gamesArray = () => {
+    let gamesArray = () => {    // returns array of objects
         if (state.api.apiGameData.length === 0){
             console.log("case 0");
             return []
@@ -37,7 +37,20 @@ function Gamelist() {
 
     const gamesArrayLoad = () => {
         if (state.api.apiGameData.length === state.api.apiUserData.length){
-            return gamesArray()?.map(x=> <p>{x.name}</p>)
+            return gamesArray()?.map(x=>
+                // <a href={`https://store.steampowered.com/app/${x.appid}/`} id="game-hyperlink">
+                <Gameitem 
+                    
+                    key={x.appid}
+                    appid={x.appid}
+                    name={x.name}
+                    playtime={x.playtime_forever}
+                    icon={x.img_icon_url}
+                    logo={x.img_logo_url}
+                />,
+                {/* </a> */}
+                
+                )
             }
         else if (state.api.status === "Fetching-gamedata"){
             return <p>Loading...</p>

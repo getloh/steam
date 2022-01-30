@@ -7,6 +7,7 @@ export const Globalstyle = createGlobalStyle`
         
     }
 
+
     .header{
         display: flex;
         justify-content: space-around;
@@ -30,6 +31,17 @@ export const Globalstyle = createGlobalStyle`
         
     }
 
+    .Gamelist{
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+    #game-hyperlink{
+        text-decoration: none;
+    }
+
+
     .error {
         position: fixed;
         color: red;
@@ -37,4 +49,6 @@ export const Globalstyle = createGlobalStyle`
         top: 0px;
         right: 0px;
     }
+
+
 `

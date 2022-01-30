@@ -17,6 +17,7 @@ export const setMode = (string) => {
 }
 
 export const setError = (string) => {
+
     return {
         type: 'ui/setError',
         payload: string
