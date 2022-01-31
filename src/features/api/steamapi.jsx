@@ -4,13 +4,18 @@ import {apikey} from "./apikey.js";
 
 import { store } from "../../app/store.js";
 import {setStatus, setApiUserData, setSteamId, setApiGameData} from './apiSlice.jsx'
-import { setInput, setError} from "../ui/uiSlice.jsx";
+import { setInput, setError, setMode} from "../ui/uiSlice.jsx";
+import { useSelector } from "react-redux";
 
 
 // const query = store.getState().ui.input;
 
-export const Steam = {
+// if (store.getState().api.apikey !== ""){
     
+// }
+
+export const Steam = {
+
     getUserData() {         // Grabs user data from steam
         const query = store.getState().ui.input;
         const steamIDarr = store.getState().api.steamId;
@@ -35,6 +40,7 @@ export const Steam = {
                 console.log(jsonResponse);
                 this.getGameData();                                                 // Searches/refreshes gameslist
                 store.dispatch(setError(""))
+                store.dispatch(setMode(""))
             }
             else {store.dispatch(setError("SteamID or VanityURL not recognized"))}
             });

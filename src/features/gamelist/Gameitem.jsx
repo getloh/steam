@@ -10,6 +10,7 @@ const StyledGameitem = styled.div`
     padding: 10px;
     text-align: left;
     align-items: center;
+    border-radius: 5px;
     
 
     width: 45vw;

@@ -6,14 +6,17 @@ export const Globalstyle = createGlobalStyle`
         color: rgb(224, 224, 224);
         
     }
-
+    a {
+        color: white;
+    }
 
     .header{
         display: flex;
         justify-content: space-around;
+ 
         align-items: center;
         background-color: rgb(30, 30, 30);
-        min-height: 8vh;
+        min-height: 10vh;
         margin: 0px;
         padding: 0px;
     }
@@ -50,5 +53,65 @@ export const Globalstyle = createGlobalStyle`
         right: 0px;
     }
 
+    #howto {
+        position: fixed;
+        opacity: 0;
+        background-color: rgba(131, 72, 5, 0.85);
+        transition: 1s ease;
+        width: 40vw;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        font-size: 0.9em;
+        border-radius: 10px;
+        z-index: -1;
+    }
+    #howto.reveal {
+        opacity: 1;
+        z-index: 9;
+    }
+    .splashhead {
+        margin-top: -3vh;
+        display: flex;
+        align-items: center;
+    }
+    .splashhead Button{
+        position: relative;
+        margin-left: 5vw;
+        opacity: 1;
+    }
+
+    #about {
+
+        position: fixed;
+        opacity: 0;
+        background-color: rgba(42, 123, 129, 0.85);
+        transition: 1s ease;
+        width: 40vw;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        font-size: 0.9em;
+        border-radius: 10px;
+        z-index: -1;
+    }
+    #about.reveal{
+
+        opacity: 1;
+        z-index: 9;
+    }
+
+
+
+
+}
 
 `

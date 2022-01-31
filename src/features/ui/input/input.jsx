@@ -1,9 +1,8 @@
 // Holds the div for the top of the page with input and search bar
 
-import styled from 'styled-components';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setInput, setMode } from '../uiSlice';
+import { setInput } from '../uiSlice';
 import { Steam } from '../../api/steamapi';
 import { StyledInput, StyledSearch } from '../uiStyles';
 
@@ -33,7 +32,7 @@ function Input() {
 
 
 
-  return <div>
+  return <div className="header-input">
     <StyledInput placeholder="Find user by vanity URL or SteamID" onKeyUp={handleKeypress} onChange={handleInput}></StyledInput>
     <StyledSearch onClick={handleFetch}> <i class="fas fa-search"></i></StyledSearch>
   </div>;

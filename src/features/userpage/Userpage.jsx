@@ -2,7 +2,6 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import {useDispatch, useSelector} from 'react-redux';
 import { convertUnixTime } from '../utility';
 
 const StyledDiv = styled.div`
@@ -35,17 +34,19 @@ const StyledDiv = styled.div`
       width: 100%;
     }
     &:hover{
-      background-color: rgb(0, 37, 54);
-      
+      background-color: rgb(0, 37, 54); 
     }
+    @media screen and (max-width: 600px) {
+      & p {
+        font-size: 0.8em;
+        font-family: 'VT323', monospace;
+      }
+    }
+        
 
 `
 
 const Userpage = ({steamid, displayname, avatar, lastlogoff, realname, age, country, status, url}) => {
-    const state = useSelector(state => state);              
-    const dispatch = useDispatch();
-
-
 
   return (
     <StyledDiv>
