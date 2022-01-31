@@ -6,6 +6,7 @@ import Input from './features/ui/input/input'
 import { Globalstyle } from './globalstyles';
 import Usercontainer from './features/userpage/Usercontainer';
 import Gamelist from './features/gamelist/Gamelist';
+import steamlogo from './Steam_icon_logo.svg'
 
 function App() {
   const state = useSelector(state => state)
@@ -14,7 +15,11 @@ function App() {
     <div className="App">
       <Globalstyle/>
       <div className="header">
-        <h1>SST</h1>
+        <div className="header-left">
+          <img src={steamlogo} alt="Logo" />
+          <h1>SST</h1>
+        </div>
+        
         <Input/>
         
         <Nav/>

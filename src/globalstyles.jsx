@@ -20,9 +20,19 @@ export const Globalstyle = createGlobalStyle`
         margin: 0px;
         padding: 0px;
     }
-    .header h1{
+    .header-left{
+        display: flex;
+    }
+    .header-left h1{
         font-size: 2rem;
         margin: 0px;
+        z-index: 9;
+    }
+    .header-left img {
+        position: relative;
+        left: 10px;
+        height: 2.5rem;
+        opacity: 0.3
     }
 
     .userarea{
