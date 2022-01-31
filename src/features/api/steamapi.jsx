@@ -37,10 +37,10 @@ export const Steam = {
                 store.dispatch(setApiUserData(jsonResponse.response.players[0]));   // Add data to state
                 store.dispatch(setStatus("Fetched-user"));                          // Set status
                 store.dispatch(setSteamId(`${query}`));                             // Add steamID to state
-                console.log(jsonResponse);
+                store.dispatch(setError(""));
+                store.dispatch(setMode(""));
                 this.getGameData();                                                 // Searches/refreshes gameslist
-                store.dispatch(setError(""))
-                store.dispatch(setMode(""))
+
             }
             else {store.dispatch(setError("SteamID or VanityURL not recognized"))}
             });
@@ -91,10 +91,14 @@ export const Steam = {
                 }).then(jsonResponse => {                       //* Success
                     jsonResponse.response.steamid = users[i];
                     store.dispatch(setApiGameData(jsonResponse.response));
+
+                    if (jsonResponse.response.game_count > 0){
                     store.dispatch(setStatus("Fetched-gamedata"))
                     store.dispatch(setError(""))
+                    }
+                    else {store.dispatch(setError("No data received, profile may be private"))}
                 });
-            }   // end of if statement
+            }   // end of if statement to find if data already exists
             else {console.log(`game data for user ${users[i]} has already been loaded`);
             store.dispatch(setStatus("Fetched-gamedataalreadypresent"))        }
         }   // end of for loop
