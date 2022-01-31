@@ -14,6 +14,12 @@ export const StyledButton = styled.button`
       background-color: rgb(0, 37, 54);
       cursor: pointer;
     }
+    @media screen and (max-width: 600px) {
+        margin-left: 1px;
+  }
+    @media screen and (max-width: 400px) {
+        height: 25px;
+  }
 `
 export const StyledButtonClose = styled.button`
     color: ${(props)=> props.color};

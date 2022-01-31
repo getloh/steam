@@ -9,11 +9,10 @@ export const Globalstyle = createGlobalStyle`
     a {
         color: white;
     }
-
+//--------------------------------------------------
     .header{
         display: flex;
         justify-content: space-around;
- 
         align-items: center;
         background-color: rgb(30, 30, 30);
         min-height: 10vh;
@@ -34,6 +33,10 @@ export const Globalstyle = createGlobalStyle`
         height: 2.5rem;
         opacity: 0.3
     }
+    .header-input{
+        display: flex;
+        flex-wrap: none;
+    }
 
     .userarea{
         background-color: rgb(43, 43, 43);
@@ -41,19 +44,20 @@ export const Globalstyle = createGlobalStyle`
     .Usercontainer{
         display: flex;
         justify-content: center;
-        
     }
+
+// -----------------------------------------------
 
     .Gamelist{
         justify-content: center;
         display: flex;
         flex-wrap: wrap;
-        
     }
     #game-hyperlink{
         text-decoration: none;
     }
 
+//------------------------------------------------
 
     .error {
         position: fixed;
@@ -79,6 +83,10 @@ export const Globalstyle = createGlobalStyle`
         font-size: 0.8em;
         border-radius: 10px;
         z-index: -1;
+
+        @media screen and (max-width: 500px) {
+        width: 80vw;
+        }
     }
     #howto.reveal {
         opacity: 1;
@@ -94,9 +102,7 @@ export const Globalstyle = createGlobalStyle`
         margin-left: 5vw;
         opacity: 1;
     }
-
     #about {
-
         position: fixed;
         opacity: 0;
         background-color: rgba(42, 123, 129, 0.85);
@@ -114,14 +120,8 @@ export const Globalstyle = createGlobalStyle`
         z-index: -1;
     }
     #about.reveal{
-
         opacity: 1;
         z-index: 9;
     }
-
-
-
-
 }
-
 `

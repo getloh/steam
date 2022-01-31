@@ -38,8 +38,8 @@ const StyledDiv = styled.div`
     }
     @media screen and (max-width: 600px) {
       & p {
-        font-size: 0.8em;
-        font-family: 'VT323', monospace;
+        font-size: 0.75em;
+
       }
     }
         

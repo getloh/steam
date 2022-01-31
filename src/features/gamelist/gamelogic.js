@@ -1,8 +1,3 @@
-import { store } from "../../app/store.js";
-
-
-
-// const query = store.getState().ui.input;
 
 export const Gamelogic = {
     compareGames(objArr1, objArr2){
