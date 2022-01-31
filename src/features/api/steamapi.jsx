@@ -1,4 +1,4 @@
-import {apikey} from "./apikey.js";
+import {myapikey} from "./apikey.js";
 // The above is a simple file containing 'export const apikey = "X",
 // with an apikey from Steam
 
@@ -9,10 +9,10 @@ import { useSelector } from "react-redux";
 
 
 // const query = store.getState().ui.input;
-
-// if (store.getState().api.apikey !== ""){
-    
-// }
+let apikey = myapikey;
+if (store.getState().api.apikey !== ""){
+    apikey = store.getState().api.apikey;
+}
 
 export const Steam = {
 

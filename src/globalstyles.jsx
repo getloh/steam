@@ -66,7 +66,7 @@ export const Globalstyle = createGlobalStyle`
         flex-direction: column;
         align-items: center;
         padding: 20px;
-        font-size: 0.9em;
+        font-size: 0.8em;
         border-radius: 10px;
         z-index: -1;
     }
@@ -99,7 +99,7 @@ export const Globalstyle = createGlobalStyle`
         flex-direction: column;
         align-items: center;
         padding: 20px;
-        font-size: 0.9em;
+        font-size: 1em;
         border-radius: 10px;
         z-index: -1;
     }

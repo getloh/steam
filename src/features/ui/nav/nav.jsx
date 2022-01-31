@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { setApikey } from '../../api/apiSlice';
 import { setMode } from '../uiSlice';
 import { StyledButton, StyledInput, StyledButtonClose } from '../uiStyles';
 
@@ -8,6 +9,9 @@ export function Nav() {
   const dispatch = useDispatch();
   const state = useSelector(state => state.ui);
 
+  const handleInput = (event) => {            // Changes state.ui.input
+    dispatch(setApikey(event.target.value))
+}
 
     return (
       <div className="Nav">
@@ -25,10 +29,10 @@ export function Nav() {
           <div>
             This site takes steam users and their games lists, and then can merge the games lists to show a list of what games you both own (or have played, for free games)
             <br />
-            Your profile will need to be fully public for this to work with my API key, alternatively you can insert your own API Key below.
+            Profile need to be fully public for this to work with my API key, alternatively you can insert your own API Key below. Which will allow you to see profiles with stats set to friends only.
             <br />
             This key can be found at <a href="https://steamcommunity.com/dev/apikey">https://steamcommunity.com/dev/apikey</a> </div>
-            <StyledInput placeholder='Insert API Key here'></StyledInput>
+            <StyledInput placeholder='Insert API Key here' onChange={handleInput}></StyledInput>
           <div></div>
         </div>
 
